@@ -22,7 +22,7 @@ CORS_ORIGIN=http://localhost:3000
 
 Create this file and update:
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
+NEXT_PUBLIC_API_URL=http://https://lifetrackdashboard.onrender.com/api
 ```
 
 ## Database Setup (MongoDB Atlas)
@@ -59,7 +59,7 @@ cd ..
 ```bash
 cd backend
 npm run dev
-# Runs on http://localhost:5000
+# Runs on http://https://lifetrackdashboard.onrender.com
 ```
 
 ### Terminal 2 - Frontend

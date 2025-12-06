@@ -49,8 +49,8 @@ export default function DashboardPage() {
   const cvInputRef = useRef<HTMLInputElement | null>(null);
 
   // Build an absolute file URL that points to the backend uploads directory.
-  // `NEXT_PUBLIC_API_URL` may include a trailing `/api` path (e.g. http://localhost:5000/api).
-  // Strip that `/api` part so we end up with the backend origin (http://localhost:5000).
+  // `NEXT_PUBLIC_API_URL` may include a trailing `/api` path (e.g. http://https://lifetrackdashboard.onrender.com/api).
+  // Strip that `/api` part so we end up with the backend origin (http://https://lifetrackdashboard.onrender.com).
   const buildFileUrl = (fileUrl: string) => {
     if (!fileUrl) return '';
     if (/^https?:\/\//.test(fileUrl)) return fileUrl;
@@ -62,7 +62,7 @@ export default function DashboardPage() {
       clientBase = '';
     }
 
-    let base = (clientBase || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000').replace(/\/$/, '');
+    let base = (clientBase || process.env.NEXT_PUBLIC_API_URL || 'http://https://lifetrackdashboard.onrender.com').replace(/\/$/, '');
     if (base.endsWith('/api')) base = base.slice(0, -4);
     return `${base}${fileUrl}`;
   };

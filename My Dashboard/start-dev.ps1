@@ -16,7 +16,7 @@ Start-Process -NoNewWindow -FilePath "npm" -ArgumentList "run dev" -WorkingDirec
 
 Write-Host ""
 Write-Host "✅ Both services starting..." -ForegroundColor Yellow
-Write-Host "Backend: http://localhost:5000" -ForegroundColor Cyan
+Write-Host "Backend: http://https://lifetrackdashboard.onrender.com" -ForegroundColor Cyan
 Write-Host "Frontend: http://localhost:3000" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Press Ctrl+C to stop services" -ForegroundColor Gray

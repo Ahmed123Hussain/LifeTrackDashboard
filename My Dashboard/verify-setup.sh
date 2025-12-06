@@ -97,7 +97,7 @@ echo ""
 
 echo "✅ Access Application"
 echo "   Frontend: http://localhost:3000"
-echo "   Backend:  http://localhost:5000"
+echo "   Backend:  http://https://lifetrackdashboard.onrender.com"
 echo ""
 
 echo "✅ Create Test Account"

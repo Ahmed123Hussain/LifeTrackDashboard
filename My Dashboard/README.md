@@ -125,7 +125,7 @@ cd frontend
 npm install
 
 # Create .env.local file
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
+NEXT_PUBLIC_API_URL=http://https://lifetrackdashboard.onrender.com/api
 
 # Development
 npm run dev

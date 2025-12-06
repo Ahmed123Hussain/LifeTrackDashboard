@@ -25,7 +25,7 @@ npm run build
 npm start
 ```
 
-Backend will run on `http://localhost:5000`
+Backend will run on `http://https://lifetrackdashboard.onrender.com`
 
 ### 2. Frontend Setup
 
@@ -36,7 +36,7 @@ cd frontend
 npm install
 
 # Create .env.local file
-echo "NEXT_PUBLIC_API_URL=http://localhost:5000/api" > .env.local
+echo "NEXT_PUBLIC_API_URL=http://https://lifetrackdashboard.onrender.com/api" > .env.local
 
 # Run in development
 npm run dev
@@ -76,7 +76,7 @@ CORS_ORIGIN=http://localhost:3000
 ### Frontend (.env.local)
 
 ```
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
+NEXT_PUBLIC_API_URL=http://https://lifetrackdashboard.onrender.com/api
 ```
 
 ## Test the Application

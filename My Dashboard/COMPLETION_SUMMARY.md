@@ -183,7 +183,7 @@ npm install
 cp .env.example .env
 # Update .env with MongoDB URI and JWT secret
 npm run dev
-# Runs on http://localhost:5000
+# Runs on http://https://lifetrackdashboard.onrender.com
 ```
 
 ### Frontend

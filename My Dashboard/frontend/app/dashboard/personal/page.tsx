@@ -91,7 +91,7 @@ export default function PersonalPage() {
   const buildFileUrl = (fileUrl: string) => {
     if (!fileUrl) return '';
     if (/^https?:\/\//.test(fileUrl)) return fileUrl;
-    let base = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000').replace(/\/$/, '');
+    let base = (process.env.NEXT_PUBLIC_API_URL || 'http://https://lifetrackdashboard.onrender.com').replace(/\/$/, '');
     if (base.endsWith('/api')) base = base.slice(0, -4);
     return `${base}${fileUrl}`;
   };

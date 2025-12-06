@@ -11,7 +11,7 @@ npm install
 
 2. Create `.env.local` file:
 ```
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
+NEXT_PUBLIC_API_URL=http://https://lifetrackdashboard.onrender.com/api
 ```
 
 3. Development:
