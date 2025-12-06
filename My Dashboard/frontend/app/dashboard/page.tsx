@@ -49,8 +49,8 @@ export default function DashboardPage() {
   const cvInputRef = useRef<HTMLInputElement | null>(null);
 
   // Build an absolute file URL that points to the backend uploads directory.
-  // `NEXT_PUBLIC_API_URL` may include a trailing `/api` path (e.g. http://https://lifetrackdashboard.onrender.com/api).
-  // Strip that `/api` part so we end up with the backend origin (http://https://lifetrackdashboard.onrender.com).
+  // `NEXT_PUBLIC_API_URL` may include a trailing `/api` path (e.g. https://lifetrackdashboard.onrender.com/api).
+  // Strip that `/api` part so we end up with the backend origin (https://lifetrackdashboard.onrender.com).
   const buildFileUrl = (fileUrl: string) => {
     if (!fileUrl) return '';
     if (/^https?:\/\//.test(fileUrl)) return fileUrl;
@@ -62,7 +62,7 @@ export default function DashboardPage() {
       clientBase = '';
     }
 
-    let base = (clientBase || process.env.NEXT_PUBLIC_API_URL || 'http://https://lifetrackdashboard.onrender.com').replace(/\/$/, '');
+    let base = (clientBase || process.env.NEXT_PUBLIC_API_URL || 'https://lifetrackdashboard.onrender.com').replace(/\/$/, '');
     if (base.endsWith('/api')) base = base.slice(0, -4);
     return `${base}${fileUrl}`;
   };
@@ -211,7 +211,7 @@ export default function DashboardPage() {
           Dashboard
         </h1>
         <p className="text-gray-600 dark:text-gray-400">
-          Welcome back! Here's your productivity overview.
+          Welcome back! Here&apos;s your productivity overview.
         </p>
 
         {/* Unified Search */}
@@ -370,7 +370,7 @@ export default function DashboardPage() {
       {stats?.todaysTodos && stats.todaysTodos.length > 0 && (
         <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-            Today's Tasks
+            Today&apos;s Tasks
           </h2>
           <div className="space-y-2">
             {stats.todaysTodos.map((todo) => (

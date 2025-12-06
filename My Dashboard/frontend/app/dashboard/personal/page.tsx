@@ -91,7 +91,7 @@ export default function PersonalPage() {
   const buildFileUrl = (fileUrl: string) => {
     if (!fileUrl) return '';
     if (/^https?:\/\//.test(fileUrl)) return fileUrl;
-    let base = (process.env.NEXT_PUBLIC_API_URL || 'http://https://lifetrackdashboard.onrender.com').replace(/\/$/, '');
+    let base = (process.env.NEXT_PUBLIC_API_URL || 'https://lifetrackdashboard.onrender.com').replace(/\/$/, '');
     if (base.endsWith('/api')) base = base.slice(0, -4);
     return `${base}${fileUrl}`;
   };
@@ -251,7 +251,7 @@ export default function PersonalPage() {
             <div className="mt-4">
               {searchResults ? (
                 <div>
-                  <p className="text-sm text-gray-500 mb-3">Showing {searchResults.length} result(s) for "{searchQuery}"</p>
+                  <p className="text-sm text-gray-500 mb-3">Showing {searchResults.length} result(s) for &quot;{searchQuery}&quot;</p>
                   <ul className="space-y-3">
                     {searchResults.map((d) => (
                       <li key={d.id} className="flex items-start justify-between bg-gray-50 dark:bg-gray-900 rounded p-3 border border-gray-100 dark:border-gray-700">

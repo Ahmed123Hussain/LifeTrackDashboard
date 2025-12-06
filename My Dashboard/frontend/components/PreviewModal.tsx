@@ -28,7 +28,7 @@ export function PreviewModal({
 }: PreviewModalProps) {
   const apiBase = (apiClient && apiClient.defaults && apiClient.defaults.baseURL)
     ? (apiClient.defaults.baseURL as string).replace(/\/api$/, '')
-    : (process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' ? window.location.origin : 'http://https://lifetrackdashboard.onrender.com'));
+    : (process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' ? window.location.origin : 'https://lifetrackdashboard.onrender.com'));
   const fullFileUrl = fileUrl ? `${apiBase}${fileUrl}` : null;
   const isImage = fileType && fileType.startsWith('image/');
 

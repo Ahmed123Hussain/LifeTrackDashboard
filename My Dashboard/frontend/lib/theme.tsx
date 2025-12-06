@@ -9,7 +9,6 @@ interface ThemeContextType {
 
 // Ensure a single shared ThemeContext across HMR / multiple module instances
 declare global {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   var __MY_APP_THEME_CONTEXT__: React.Context<ThemeContextType | undefined> | undefined;
 }
 
@@ -20,7 +19,6 @@ const getSharedThemeContext = () => {
 
   const ctx = React.createContext<ThemeContextType | undefined>(undefined);
   if (typeof globalThis !== 'undefined') {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (globalThis as any).__MY_APP_THEME_CONTEXT__ = ctx;
   }
   return ctx;

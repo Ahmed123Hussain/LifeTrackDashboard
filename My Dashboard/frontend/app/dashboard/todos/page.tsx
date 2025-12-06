@@ -58,7 +58,7 @@ export default function TodosPage() {
     try {
       if (editingId) {
         await todoAPI.update(editingId, formData);
-        setTodos(todos.map((t) => (t._id === editingId ? { ...t, ...formData } : t)));
+        setTodos(todos.map((t) => (t._id === editingId ? { ...t, ...(formData as Partial<Todo>) } : t)));
       } else {
         const response = await todoAPI.create(formData);
         setTodos([response.data.data, ...todos]);

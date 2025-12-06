@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev -p $PORT",
     "build": "next build",
+    "export": "next export",
     "start": "next start -p $PORT",
     "lint": "next lint"
   },
@@ -34,6 +35,10 @@
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
     "eslint": "^8.50.0",
-    "eslint-config-next": "^15.0.0"
+    "eslint-config-next": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0"
   }
 }
