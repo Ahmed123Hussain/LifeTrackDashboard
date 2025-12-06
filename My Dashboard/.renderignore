@@ -1,0 +1,11 @@
+# Ignore lockfiles and local envs for frontend deploys to reduce upload size
+frontend/package-lock.json
+frontend/README.md
+frontend/.env*
+frontend/.vscode/
+
+# General excludes
+**/node_modules
+**/*.log
+.DS_Store
+*.tgz
