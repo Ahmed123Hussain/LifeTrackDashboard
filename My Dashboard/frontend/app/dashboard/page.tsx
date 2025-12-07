@@ -4,6 +4,8 @@ import { useEffect, useState, useRef } from 'react';
 import { Card } from '@/components/Card';
 import { goalAPI, certAPI, todoAPI, degreeAPI, uploadAPI } from '@/lib/api';
 import apiClient from '@/lib/api';
+import Script from 'next/script'; // <--- NEW IMPORT
+import ConvaiWidget from '@/components/ConvaiWidget';
 import {
   BarChart,
   Bar,
@@ -393,6 +395,11 @@ export default function DashboardPage() {
           </div>
         </div>
       )}
+      {/* Chat widget (ElevenLabs Convai) */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <ConvaiWidget agentId="agent_2501k8wgsa31e2yt088thkcxnexb" />
+      </div>
+
     </div>
   );
 }
