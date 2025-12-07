@@ -25,16 +25,26 @@ dotenv.config({ path: path.join(__dirname, '..', '.env') });
 const app: Application = express();
 
 // Middleware
+// Configure CORS: allow multiple origins (comma-separated in env var)
+const rawCors = process.env.CORS_ORIGIN || 'http://localhost:3000';
+const allowedOrigins = rawCors.split(',').map((s) => s.trim()).filter(Boolean);
+
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+    origin: function (incomingOrigin, callback) {
+      // If no origin (e.g. server-to-server requests, curl), allow it
+      if (!incomingOrigin) return callback(null, true);
+      if (allowedOrigins.includes(incomingOrigin)) return callback(null, true);
+      return callback(new Error('CORS: Origin not allowed'));
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
-// Ensure preflight requests are handled with the same CORS settings
-app.options('*', cors({ origin: process.env.CORS_ORIGIN || 'http://localhost:3000', credentials: true }));
+
+// Preflight requests use the same CORS handler above; no duplicate static header values
+app.options('*', (req, res) => res.sendStatus(204));
 app.use(express.json());
 // Serve uploaded files from the uploads folder
 const uploadsPath = path.join(__dirname, '../uploads');
